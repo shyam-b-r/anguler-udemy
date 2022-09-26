@@ -4,11 +4,14 @@
 <app-assign-two></app-assign-two>
 <app-assign-three></app-assign-three>
 <app-assign-four></app-assign-four>
+<app-assign-five></app-assign-five>
+
 <input type="text"
 placeholder="server name (event binding)"
 class="form-control"
 (input)="onServerData($event)"
 />-->
+
 <!-- <app-servers></app-servers> -->
 
 <!--
@@ -44,7 +47,12 @@ class="form-control"
   </div>
 </div>  -->
 
-<!-- ***** Recipe / shopping list project *********-->
-<app-header (tabSelected)="selectTab($event)"></app-header>
-<app-recipes *ngIf="tab === 'recipe'"></app-recipes>
-<app-shopping-list *ngIf="tab !== 'recipe'"></app-shopping-list> 
+<!-- <app-new-account></app-new-account>
+<app-account 
+*ngFor="let acc of accounts; let i=index" 
+[account] = "acc" 
+[id]="i"></app-account> -->
+<!-- ***** Recipe / shopping list project ********* -->
+<app-header></app-header>
+<router-outlet></router-outlet>
+

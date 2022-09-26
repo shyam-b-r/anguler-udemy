@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -23,9 +24,25 @@ import { AssignFourComponent } from './assign-four/assign-four.component';
 import { GameControlComponent } from './assign-four/game-control/game-control.component';
 import { OddComponent } from './assign-four/odd/odd.component';
 import { EvenComponent } from './assign-four/even/even.component';
+import {AccountComponent} from './account/account.component';
+import {NewAccountComponent} from './new-account/new-account.component';
+
 import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directive';
 import {BetterHighlightDirective} from './better-highlight/better-highlight.directive';
 import {DropdownDirective} from './shared/dropdown.directive';
+
+import { LoggingService } from './services/logging.service';
+import {AccountService} from './services/account.service';
+import { AssignFiveComponent } from './assign-five/assign-five.component';
+import { ActiveUserComponent } from './assign-five/active-user/active-user.component';
+import { InactiveUserComponent } from './assign-five/inactive-user/inactive-user.component';
+import { UserStatusService } from './services/userstatus.service';
+import {ShoppingListService} from './services/shoppinglist.service';
+import {RecipeService} from './services/recipe.service';
+
+import {AuthService} from './services/auth.service';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -49,16 +66,31 @@ import {DropdownDirective} from './shared/dropdown.directive';
     GameControlComponent,
     OddComponent,
     EvenComponent,
+    AccountComponent,
+    NewAccountComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    DropdownDirective
+    DropdownDirective,
+    AssignFiveComponent,
+    ActiveUserComponent,
+    InactiveUserComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    LoggingService, 
+    AccountService, 
+    UserStatusService,
+    ShoppingListService, 
+    RecipeService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

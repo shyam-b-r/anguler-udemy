@@ -1,0 +1,7 @@
+<h2>Active Users</h2>
+<app-active-user *ngFor="let usr of aUsers; let i=index" [user]="usr"
+[id]="i"></app-active-user>
+
+<h2>Inactive Users</h2>
+<app-inactive-user *ngFor="let usr of iUsers; let i=index" [user]="usr"
+[id]="i"></app-inactive-user>
